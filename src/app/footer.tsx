@@ -1,71 +1,77 @@
 import React from "react";
 import Image from "next/image";
-import { FaGithub, FaLinkedin } from "react-icons/fa6";
+import { AiFillHeart, AiOutlineCopyright } from "react-icons/ai";
+import { Square3Stack3DIcon } from "@heroicons/react/24/outline";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 py-8">
-      <div className="max-w-4xl mx-auto text-white flex justify-between">
-        {/* Première partie (à gauche) */}
-        <div className="flex space-y-4">
-          {/* Colonne 1 */}
-          <div className="flex items-center space-x-2">
+    <footer className="bg-black py-8 px-10">
+      {/**First part */}
+      <div className="p-4 text-white flex justify-between">
+        {/* Colonne 1 */}
+        <div className="flex flex-col">
+          <a href="/" className="flex">
             <Image
-              className="h-8 w-auto"
+              className="h-8 w-auto mr-2"
               src={require("../assets/Logo.png")}
-              alt="Logo"
+              alt=""
             />
-            <div className="flex">
-              <a href="mailto:bentini.pro@gmail.com" className="text-white">
-                bentini.pro@gmail.com
-              </a>
-              <span className="text-white">|</span>
-              <a href="tel:0684474221" className="text-white">
-                06 84 47 42 21
-              </a>
+            <div className="flex flex-col font-medium text-xs">
+              <span>Antoine</span>
+              <span>BENTINI</span>
             </div>
+          </a>
+          <div className="flex flex-col">
+            <a
+              href="mailto:bentini.pro@gmail.com"
+              className="text-sm text-gray-400 hover:text-gray-300"
+            >
+              bentini.pro@gmail.com
+            </a>
+            <a
+              href="tel:0684474221"
+              className="text-sm text-gray-400 hover:text-gray-300"
+            >
+              +33 6 84 47 42 21
+            </a>
           </div>
         </div>
 
-        {/* Deuxième partie (à droite) */}
         {/* Colonne 2 */}
-        <div className="flex flex-col">
-          <h3 className="text-xl font-semibold mb-2">Sections</h3>
-          <a href="/portfolio" className="text-gray-400 hover:text-gray-300">
-            Portfolio
-          </a>
-          <a href="/contact" className="text-gray-400 hover:text-gray-300">
-            Contact
-          </a>
+        <div className="grid grid-cols-2 gap-20 text-sm">
+          <div className="flex flex-col">
+            <h3 className="text-md font-semibold mb-2">Navigation</h3>
+            <a href="/portfolio" className="text-gray-400 hover:text-gray-300">
+              Portfolio
+            </a>
+            <a href="/contact" className="text-gray-400 hover:text-gray-300">
+              Contact
+            </a>
+          </div>
+          <div className="flex flex-col">
+            <h3 className="text-md font-semibold mb-2">Réseau</h3>
+            <a href="/portfolio" className="text-gray-400 hover:text-gray-300">
+              LinkedIn
+            </a>
+            <a href="/contact" className="text-gray-400 hover:text-gray-300">
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
 
-      {/* Ligne séparatrice */}
-      <div className="w-0.5 bg-gray-600"></div>
+      {/**Ligne séparatrice horizontale */}
+      <hr className="border-t border-gray-600 my-4" />
 
-      <div>
-        <div className="flex items-center space-x-4">
-          <a
-            href="https://www.linkedin.com/in/antoine-bentini-17b7a3197/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-300"
-          >
-            {/* Icône LinkedIn */}
-            <FaGithub style={{ color: "#FFFFFF" }} />
-          </a>
-          <a
-            href="https://github.com/Kaohiso"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-300"
-          >
-            {/* Icône GitHub */}
-            <span id="cliackableIconGithub">
-              <FaLinkedin style={{ color: "#FFFFFF" }} />
-            </span>
-          </a>
-        </div>
+      {/**Second part */}
+      <div className="flex flex-col text-gray-600 text-xs">
+        <span className="flex flex-row">
+          <AiOutlineCopyright className="h-3 w-3 mr-1" /> 2023 developed with <AiFillHeart className="mx-1" color="FF0000" /> by Koahiso
+        </span>
+        <span className="flex flex-row">
+          <Square3Stack3DIcon className="h-3 w-3 mr-1" aria-hidden="true" /> stack
+          utilisé: React, NextJS, TailwindCSS
+        </span>
       </div>
     </footer>
   );
