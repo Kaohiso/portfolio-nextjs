@@ -50,10 +50,10 @@ const Footer = () => {
           </div>
           <div className="flex flex-col">
             <h3 className="text-md font-semibold mb-2">Réseau</h3>
-            <a href="/portfolio" className="text-gray-400 hover:text-gray-300">
+            <a href="https://www.linkedin.com/in/antoine-bentini-17b7a3197/" className="text-gray-400 hover:text-gray-300">
               LinkedIn
             </a>
-            <a href="/contact" className="text-gray-400 hover:text-gray-300">
+            <a href="https://github.com/Kaohiso" className="text-gray-400 hover:text-gray-300">
               GitHub
             </a>
           </div>
