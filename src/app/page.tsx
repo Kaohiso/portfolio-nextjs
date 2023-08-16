@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Header from "./header";
-import Content from "./content";
+import { WhoIAm, Services } from "./content";
 import Footer from "./footer";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
 
@@ -47,14 +47,10 @@ const ScrollToTopButton = () => {
 
 export default function Home() {
   return (
-    <div className="bg-gray-100 h-full">
-      <div className="h-screen bg-[url('../assets/bg_home.jpeg')]">
-        <Header />
-        <div className="flex justify-center h-[calc(100vh-74px)]">
-          <Content />
-        </div>
-      </div>
-      <div className="h-screen"></div>
+    <div className="bg-gradient-to-b from-slate-200 to-gray-100 ">
+      <Header />
+      <WhoIAm />
+      <Services />
       <Footer />
       <ScrollToTopButton />
     </div>
