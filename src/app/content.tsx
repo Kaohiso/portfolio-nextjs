@@ -8,23 +8,23 @@ import { motion, useInView } from "framer-motion"; // Importez le composant moti
 
 function WhoIAm() {
   return (
-    <div className="flex justify-center h-[calc(100vh-74px)]">
+    <section className="flex justify-center h-[calc(100vh-74px)]">
       <div className="flex justify-center items-center flex-col">
-        <div className="text-gray-800 text-xs md:text-lg lg:text-3xl ">
+        <div className="text-gray-800 text-lg lg:text-3xl ">
           Je suis
         </div>
-        <div className="text-gray-800 text-lg md:text-4xl lg:text-7xl">
+        <div className="text-gray-800 text-4xl lg:text-7xl">
           UX UI Designer
         </div>
-        <div className="text-gray-800 text-lg md:text-4xl lg:text-7xl">&</div>
-        <div className="text-gray-800 text-lg md:text-4xl lg:text-7xl">
+        <div className="text-gray-800 text-4xl lg:text-7xl">&</div>
+        <div className="text-gray-800 text-4xl lg:text-7xl">
           Développeur
         </div>
-        <div className="text-gray-800 text-lg md:text-4xl lg:text-7xl">
+        <div className="text-gray-800 text-4xl lg:text-7xl">
           Front-end
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -47,16 +47,7 @@ function Services({ controls }: { controls: any }) {
   }
 
   return (
-    <motion.div
-      ref={ref}
-      id="services"
-      className="h-auto flex flex-col justify-center my-12"
-      initial="hidden" // Animation initiale lors du chargement de la page
-      whileInView="visible"
-      //viewport={{ once: true }}
-      //animate={controls} // Utilisez le prop animate pour contrôler l'animation
-      variants={servicesVariants} // Utilisez les variants définis
-    >
+    <section className="h-auto flex flex-col justify-center py-20">
       <div className="max-w-4xl mx-auto p-4">
         <h1 className="text-6xl text-gray-800 font-semibold mb-9">Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
@@ -158,17 +149,71 @@ function Services({ controls }: { controls: any }) {
           </div>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
 }
 
-function Skills() {
-  
-}
+const Skills: React.FC = () => {
+  return (
+    <section className="bg-white py-20">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-6xl font-semibold text-gray-800 mb-9">Compétences</h1>
+        <div className="grid grid-cols-2 gap-12">
+          {/* Column 1: Front-end Skills */}
+          <div>
+            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">Front-end</h3>
+            <div className="mb-8">
+              <h4 className="text-lg font-medium text-slate-900 mb-2">HTML/CSS</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+              </div>
+            </div>
+            <div className="mb-8">
+              <h4 className="text-lg font-medium text-slate-900 mb-2">JS (React Native/JS, NextJS)</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '75%' }}></div>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">Git</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Column 2: UX/UI Skills */}
+          <div>
+            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">UX/UI</h3>
+            <div className="mb-8">
+              <h4 className="text-lg font-medium text-slate-900 mb-2">Ergonomie</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '85%' }}></div>
+              </div>
+            </div>
+            <div className="mb-8">
+              <h4 className="text-lg font-medium text-slate-900 mb-2">Wireframe/Prototype</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+              </div>
+            </div>
+            <div>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">Figma</h4>
+              <div className="relative h-2 bg-slate-300 rounded-full">
+                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '83%' }}></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 function Experience() {
   return (
-    <div className="flex flex-col justify-center">
+    <section className="flex flex-col justify-center py-20">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-6xl text-gray-800 font-semibold mb-9">
           Expériences
@@ -301,7 +346,7 @@ function Experience() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Header from "./header";
-import { WhoIAm, Services, Experience } from "./content";
+import { WhoIAm, Services, Skills, Experience } from "./content";
 import Footer from "./footer";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
 import { useAnimation } from "framer-motion"; // Importez les composants motion et useAnimation de framer-motion
@@ -54,6 +54,7 @@ export default function Home() {
       <Header />
       <WhoIAm />
       <Services controls={controls} />
+      <Skills />
       <Experience />
       <Footer />
       <ScrollToTopButton />
