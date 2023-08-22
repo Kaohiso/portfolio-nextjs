@@ -5,7 +5,7 @@ import Header from "./header";
 import { WhoIAm, Services, Experience } from "./content";
 import Footer from "./footer";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
-import { motion, useAnimation } from "framer-motion"; // Importez les composants motion et useAnimation de framer-motion
+import { useAnimation } from "framer-motion"; // Importez les composants motion et useAnimation de framer-motion
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -48,11 +48,6 @@ const ScrollToTopButton = () => {
 
 export default function Home() {
   const controls = useAnimation(); // Utilisez le hook useAnimation de framer-motion
-  const timelineData = [
-    { year: "2005", event: "Événement 1" },
-    { year: "2010", event: "Événement 2" },
-    // Ajoutez d'autres éléments de la frise chronologique ici
-  ];
 
   return (
     <div className="bg-gradient-to-b from-gray-200 to-gray-100 ">

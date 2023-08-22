@@ -162,7 +162,9 @@ function Services({ controls }: { controls: any }) {
   );
 }
 
-function Skills() {}
+function Skills() {
+  
+}
 
 function Experience() {
   return (
