@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Header from "./header";
-import { WhoIAm, Services, Skills, Experience } from "./content";
-import Footer from "./footer";
+import Header from "./components/header";
+import { WhoIAm, Services, Skills, Experience } from "./components/content";
+import Footer from "./components/footer";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
-import { useAnimation } from "framer-motion"; // Importez les composants motion et useAnimation de framer-motion
+import Cursor from "./components/Cursor";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -47,17 +47,16 @@ const ScrollToTopButton = () => {
 };
 
 export default function Home() {
-  const controls = useAnimation(); // Utilisez le hook useAnimation de framer-motion
-
   return (
-    <div className="bg-gradient-to-b from-gray-200 to-gray-100 ">
+    <div className="bg-gray-100">
       <Header />
       <WhoIAm />
-      <Services controls={controls} />
+      <Services />
       <Skills />
       <Experience />
       <Footer />
       <ScrollToTopButton />
+      {/*<Cursor />*/}
     </div>
   );
 }

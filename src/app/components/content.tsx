@@ -1,10 +1,9 @@
-import React, { useRef } from "react";
+import React from "react";
 import { RiUserSearchLine } from "react-icons/ri";
 import { IoIosColorPalette } from "react-icons/io";
 import { AiFillCode } from "react-icons/ai";
 import { GiMeshNetwork } from "react-icons/gi";
 import { PiLayoutDuotone } from "react-icons/pi";
-import { motion, useInView } from "framer-motion"; // Importez le composant motion et le hook useInView de framer-motion
 
 function WhoIAm() {
   return (
@@ -28,24 +27,7 @@ function WhoIAm() {
   );
 }
 
-function Services({ controls }: { controls: any }) {
-  const ref = useRef(null);
-  const isInView = useInView(ref);
-
-  const servicesVariants = {
-    hidden: { opacity: 0, y: 16 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" },
-    },
-  };
-
-  // Activez l'animation lorsque la section Services est visible
-  if (isInView) {
-    controls.start("visible");
-  }
-
+function Services() {
   return (
     <section className="h-auto flex flex-col justify-center py-20">
       <div className="max-w-4xl mx-auto p-4">

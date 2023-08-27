@@ -18,7 +18,7 @@ export default function Header() {
           <a href="/" className="flex items-center">
             <Image
               className="h-8 w-auto mx-2"
-              src={require("../assets/Logo.png")}
+              src={require("../../assets/Logo.png")}
               alt=""
             />
             <div className="flex flex-col font-medium text-xs">
@@ -66,7 +66,7 @@ export default function Header() {
               <span className="sr-only">Antoine BENTINI</span>
               <Image
                 className="h-8 w-auto mr-2"
-                src={require("../assets/Logo.png")}
+                src={require("../../assets/Logo.png")}
                 alt="Antoine BENTINI"
               />
             </a>
