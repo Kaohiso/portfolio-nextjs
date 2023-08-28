@@ -2,7 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Header from "./components/header";
-import { WhoIAm, Services, Skills, Experience } from "./components/content";
+import {
+  WhoIAm,
+  Services,
+  Skills,
+  Experience,
+  Contact,
+  Portfolio,
+} from "./components/content";
 import Footer from "./components/footer";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
 import Cursor from "./components/Cursor";
@@ -48,12 +55,26 @@ const ScrollToTopButton = () => {
 
 export default function Home() {
   return (
-    <div className="bg-gray-100">
+    <div>
       <Header />
-      <WhoIAm />
-      <Services />
-      <Skills />
-      <Experience />
+      <section id="home" >
+        <WhoIAm />
+      </section>
+      <section id="service" >
+        <Services />
+      </section>
+      <section id="skill" >
+        <Skills />
+      </section>
+      <section id="exp" >
+        <Experience />
+      </section>
+      <section id="work" >
+        <Portfolio />
+      </section>
+      <section id="contact" >
+        <Contact />
+      </section>
       <Footer />
       <ScrollToTopButton />
       {/*<Cursor />*/}

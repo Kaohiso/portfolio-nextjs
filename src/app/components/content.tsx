@@ -4,24 +4,18 @@ import { IoIosColorPalette } from "react-icons/io";
 import { AiFillCode } from "react-icons/ai";
 import { GiMeshNetwork } from "react-icons/gi";
 import { PiLayoutDuotone } from "react-icons/pi";
+import "./Map.module.css";
+import { MapPinIcon } from "@heroicons/react/24/outline";
 
 function WhoIAm() {
   return (
-    <section className="flex justify-center h-[calc(100vh-74px)]">
+    <section className="h-screen flex justify-center">
       <div className="flex justify-center items-center flex-col">
-        <div className="text-gray-800 text-lg lg:text-3xl ">
-          Je suis
-        </div>
-        <div className="text-gray-800 text-4xl lg:text-7xl">
-          UX UI Designer
-        </div>
+        <div className="text-gray-800 text-lg lg:text-3xl ">Je suis</div>
+        <div className="text-gray-800 text-4xl lg:text-7xl">UX UI Designer</div>
         <div className="text-gray-800 text-4xl lg:text-7xl">&</div>
-        <div className="text-gray-800 text-4xl lg:text-7xl">
-          Développeur
-        </div>
-        <div className="text-gray-800 text-4xl lg:text-7xl">
-          Front-end
-        </div>
+        <div className="text-gray-800 text-4xl lg:text-7xl">Développeur</div>
+        <div className="text-gray-800 text-4xl lg:text-7xl">Front-end</div>
       </div>
     </section>
   );
@@ -139,50 +133,82 @@ const Skills: React.FC = () => {
   return (
     <section className="bg-white py-20">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-6xl font-semibold text-gray-800 mb-9">Compétences</h1>
+        <h1 className="text-6xl font-semibold text-gray-800 mb-9">
+          Compétences
+        </h1>
         <div className="grid grid-cols-2 gap-12">
           {/* Column 1: Front-end Skills */}
           <div>
-            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">Front-end</h3>
+            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">
+              Front-end
+            </h3>
             <div className="mb-8">
-              <h4 className="text-lg font-medium text-slate-900 mb-2">HTML/CSS</h4>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">
+                HTML/CSS
+              </h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "80%" }}
+                ></div>
               </div>
             </div>
             <div className="mb-8">
-              <h4 className="text-lg font-medium text-slate-900 mb-2">JS (React Native/JS, NextJS)</h4>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">
+                JS (React Native/JS, NextJS)
+              </h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '75%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "75%" }}
+                ></div>
               </div>
             </div>
             <div>
               <h4 className="text-lg font-medium text-slate-900 mb-2">Git</h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "80%" }}
+                ></div>
               </div>
             </div>
           </div>
-          
+
           {/* Column 2: UX/UI Skills */}
           <div>
-            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">UX/UI</h3>
+            <h3 className="text-3xl font-semibold text-indigo-500 mb-6">
+              UX/UI
+            </h3>
             <div className="mb-8">
-              <h4 className="text-lg font-medium text-slate-900 mb-2">Ergonomie</h4>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">
+                Ergonomie
+              </h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '85%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "85%" }}
+                ></div>
               </div>
             </div>
             <div className="mb-8">
-              <h4 className="text-lg font-medium text-slate-900 mb-2">Wireframe/Prototype</h4>
+              <h4 className="text-lg font-medium text-slate-900 mb-2">
+                Wireframe/Prototype
+              </h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '80%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "80%" }}
+                ></div>
               </div>
             </div>
             <div>
               <h4 className="text-lg font-medium text-slate-900 mb-2">Figma</h4>
               <div className="relative h-2 bg-slate-300 rounded-full">
-                <div className="absolute h-full bg-indigo-500 rounded-full" style={{ width: '83%' }}></div>
+                <div
+                  className="absolute h-full bg-indigo-500 rounded-full"
+                  style={{ width: "83%" }}
+                ></div>
               </div>
             </div>
           </div>
@@ -191,7 +217,6 @@ const Skills: React.FC = () => {
     </section>
   );
 };
-
 
 function Experience() {
   return (
@@ -332,4 +357,112 @@ function Experience() {
   );
 }
 
-export { WhoIAm, Services, Skills, Experience };
+function Contact() {
+  return (
+    <div className="bg-gray-100 pb-20">
+      <div className="h-full py-16">
+        {/**LOCALISATION */}
+        <div className="max-w-4xl mx-auto text-gray-800 p-4">
+          <h1 className="text-6xl font-semibold mb-4">Contact</h1>
+          <p className="mb-8">
+            Mon portfolio vous a plu ou vous souhaitez collaborer ? N'hésitez
+            pas à me contacter !
+          </p>
+        </div>
+        {/**MESSAGE */}
+        <div className="max-w-4xl mx-auto p-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="flex flex-col p-4 bg-white rounded-lg shadow-md">
+              <h2 className="text-xl text-gray-600 font-semibold mb-4">
+                Localisation
+              </h2>
+              <div className="flex-grow flex flex-col justify-center">
+                <div className="mb-2">
+                  <iframe
+                    className="map"
+                    title="Thionville Map"
+                    width="100%"
+                    height="200"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=6.151599884033205%2C49.34162388857872%2C6.215896606445314%2C49.37417066369996&amp;layer=mapnik&amp;marker=49.357896464154984%2C6.183748245239258"
+                  />
+                </div>
+                <div className="flex mb-2">
+                  <MapPinIcon className="h-5 w-5 mr-2 text-gray-600" />
+                  <p className="text-gray-600">Thionville, France</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="p-4 bg-white rounded-lg shadow-md">
+              <h2 className="text-xl text-gray-600 font-semibold mb-4 ">
+                Envoyer un message
+              </h2>
+              <div className="message-form">
+                <form>
+                  <div className="mb-4">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Nom
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    />
+                  </div>
+                  <div className="mb-4 flex-grow">
+                    <label
+                      htmlFor="message"
+                      className="block text-sm font-medium text-gray-700"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="mt-1 p-2 block w-full border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                    ></textarea>
+                  </div>
+                  <button
+                    type="submit"
+                    className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                  >
+                    Envoyer
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function Portfolio() {
+  return (
+    <div className="max-w-4xl mx-auto text-gray-800 p-4">
+      <h1 className="text-6xl font-semibold mb-4">Portfolio</h1>
+    </div>
+  );
+}
+
+export { WhoIAm, Services, Skills, Experience, Portfolio, Contact };
