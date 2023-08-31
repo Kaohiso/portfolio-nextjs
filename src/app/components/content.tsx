@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiUserSearchLine } from "react-icons/ri";
 import { IoIosColorPalette } from "react-icons/io";
 import { AiFillCode } from "react-icons/ai";
 import { GiMeshNetwork } from "react-icons/gi";
 import { PiLayoutDuotone } from "react-icons/pi";
-import "./Map.module.css";
 import { MapPinIcon } from "@heroicons/react/24/outline";
+import Masonry from "@mui/lab/Masonry";
+import { motion } from "framer-motion";
 
-function WhoIAm() {
+const WhoIAm: React.FC = () => {
   return (
     <section className="h-screen flex justify-center">
       <div className="flex justify-center items-center flex-col">
@@ -19,9 +20,9 @@ function WhoIAm() {
       </div>
     </section>
   );
-}
+};
 
-function Services() {
+const Services: React.FC = () => {
   return (
     <section className="h-auto flex flex-col justify-center py-20">
       <div className="max-w-4xl mx-auto p-4">
@@ -127,11 +128,11 @@ function Services() {
       </div>
     </section>
   );
-}
+};
 
 const Skills: React.FC = () => {
   return (
-    <section className="bg-white py-20">
+    <section className="py-20">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-6xl font-semibold text-gray-800 mb-9">
           Compétences
@@ -218,7 +219,7 @@ const Skills: React.FC = () => {
   );
 };
 
-function Experience() {
+const Experience: React.FC = () => {
   return (
     <section className="flex flex-col justify-center py-20">
       <div className="max-w-4xl mx-auto">
@@ -355,15 +356,15 @@ function Experience() {
       </div>
     </section>
   );
-}
+};
 
-function Contact() {
+const Contact: React.FC = () => {
   return (
-    <div className="bg-gray-100 pb-20">
+    <div className="pb-20">
       <div className="h-full py-16">
         {/**LOCALISATION */}
         <div className="max-w-4xl mx-auto text-gray-800 p-4">
-          <h1 className="text-6xl font-semibold mb-4">Contact</h1>
+          <h1 className="text-6xl font-semibold mb-9">Contact</h1>
           <p className="mb-8">
             Mon portfolio vous a plu ou vous souhaitez collaborer ? N'hésitez
             pas à me contacter !
@@ -455,14 +456,94 @@ function Contact() {
       </div>
     </div>
   );
-}
+};
 
-function Portfolio() {
+const Portfolio = () => {
+  const widthImg = 900;
+  const images = [
+    {
+      id: 1,
+      src: "/auditool.jpg",
+      title: "AudiTool",
+      tag: "Web",
+    },
+    {
+      id: 2,
+      src: "/medi_merge_hub.jpg",
+      title: "MediMergeHub",
+      tag: "Web",
+    },
+    {
+      id: 3,
+      src: "/lih_mobile_app.jpg",
+      title: "LIHMobileApp",
+      tag: "Mobile",
+    },
+    {
+      id: 4,
+      src: "/colive.jpg",
+      title: "Colive",
+      tag: "Mobile",
+    },
+  ];
+
+  const tags = ["All", "Mobile", "Web" /*"image"*/]; // Liste des tags possibles
+
+  const [selectedTag, setSelectedTag] = useState("All"); // Tag actuellement sélectionné
+
+  const handleTagClick = (tag: string) => {
+    setSelectedTag(tag); // Mettre à jour le tag sélectionné
+  };
+
+  const filteredImages =
+    selectedTag === "All"
+      ? images
+      : images.filter((image) => image.tag === selectedTag);
+
   return (
-    <div className="max-w-4xl mx-auto text-gray-800 p-4">
-      <h1 className="text-6xl font-semibold mb-4">Portfolio</h1>
-    </div>
+    <section className="py-20">
+      <div className="max-w-4xl mx-auto text-gray-800 p-4">
+        <h1 className="text-6xl font-semibold mb-9">Portfolio</h1>
+        <div className="flex space-x-4 mb-4">
+          {tags.map((tag) => (
+            <button
+              key={tag}
+              className={`px-4 py-2 rounded-full text-xs ${
+                selectedTag === tag
+                  ? "bg-indigo-500 text-white"
+                  : "bg-transparent text-indigo-500 border-2 border-indigo-500"
+              }`}
+              onClick={() => handleTagClick(tag)}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+        <Masonry columns={3} spacing={2}>
+          {filteredImages.map((image) => (
+            <div
+              key={image.id}
+              className="transition-transform transform hover:scale-105"
+            >
+              <img
+                src={image.src}
+                alt={image.title}
+                className="rounded-lg shadow-md"
+              />
+            </div>
+          ))}
+        </Masonry>
+      </div>
+    </section>
   );
-}
+};
 
 export { WhoIAm, Services, Skills, Experience, Portfolio, Contact };
+
+{
+  /**
+
+                  <div className="p-4 rounded-lg bg-opacity-60 font-semibold bg-gray-900 text-white absolute bottom-0 left-0 right-0">
+                    {image.title}
+                  </div> */
+}
