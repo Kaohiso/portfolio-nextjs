@@ -1,18 +1,17 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Header from "./components/header";
 import {
+  Header,
   WhoIAm,
   Services,
-  Skills,
   Experience,
   Contact,
   Portfolio,
-} from "./components/content";
-import Footer from "./components/footer";
+  Skills,
+  Footer,
+} from "./components";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
-import Cursor from "./components/Cursor";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,22 +56,22 @@ export default function Home() {
   return (
     <div>
       <Header />
-      <section id="home" >
+      <section id="home">
         <WhoIAm />
       </section>
-      <section id="service" >
+      <section id="service">
         <Services />
       </section>
-      <section id="skill" >
+      <section id="skill">
         <Skills />
       </section>
-      <section id="exp" >
+      <section id="exp">
         <Experience />
       </section>
-      <section id="work" >
+      <section id="work">
         <Portfolio />
       </section>
-      <section id="contact" >
+      <section id="contact">
         <Contact />
       </section>
       <Footer />

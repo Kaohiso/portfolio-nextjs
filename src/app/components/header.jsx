@@ -5,7 +5,9 @@ import {
   HiOutlineLightBulb,
   HiOutlineBriefcase,
   HiOutlineClock,
+  HiOutlineX,
 } from "react-icons/hi";
+import { HiOutlineBars3 } from "react-icons/hi2";
 import { HiOutlineEnvelope } from "react-icons/hi2";
 import { Link } from "react-scroll";
 
@@ -51,6 +53,7 @@ const buttonData = [
 export default function Header() {
   const [hoveredButton, setHoveredButton] = useState(null);
   const [visibleSection, setVisibleSection] = useState(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false); // Ajout de l'état du menu mobile
 
   const handleMouseEnter = (buttonId) => {
     setHoveredButton(buttonId);
@@ -58,6 +61,14 @@ export default function Header() {
 
   const handleMouseLeave = () => {
     setHoveredButton(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
   };
 
   const determineVisibleSection = () => {
@@ -94,29 +105,96 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
-      {buttonData.map((button) => (
-        <Link
-          key={button.id}
-          to={button.key.toLowerCase()}
-          spy={true}
-          smooth={true}
-          duration={500}
+    <div>
+      {/* Mobile Menu Button */}
+      <div className="z-40 md:hidden fixed right-0 m-4">
+        <button
+          type="button"
+          className="bg-white rounded-full p-3 drop-shadow-md"
+          onClick={toggleMobileMenu}
         >
+          <span className="sr-only">Open main menu</span>
+          <HiOutlineBars3 className="h-6 w-6" aria-hidden="true" />
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`z-50 fixed right-0 drop-shadow-md md:hidden ${
+          mobileMenuOpen ? "block" : "hidden"
+        }`}
+      >
+        <div className="bg-white w-64 absolute right-0 top-0 h-screen flex flex-col p-4">
+          {/* Close Button */}
           <button
-            className={`rounded-full p-3 flex items-center text-gray-900 drop-shadow-sm my-2 ${
-              (button.id === hoveredButton || button.key === visibleSection) ? "bg-indigo-400 text-white" : "bg-white"
-            }`}
-            onMouseEnter={() => handleMouseEnter(button.id)}
-            onMouseLeave={handleMouseLeave}
+            type="button"
+            className="self-end p-2 text-gray-700"
+            onClick={closeMobileMenu}
           >
-            {button.icon}
-            {hoveredButton === button.id && (
-              <span className="ml-2">{button.text}</span>
-            )}
+            <span className="sr-only">Close menu</span>
+            <HiOutlineX className="h-6 w-6" aria-hidden="true" />
           </button>
-        </Link>
-      ))}
+
+          {/* Menu Items */}
+          <ul className="text-white">
+            {buttonData.map((button) => (
+              <Link
+                key={button.id}
+                className="flex justify-content-center items-center space-x-2"
+                to={button.key.toLowerCase()}
+                spy={true}
+                smooth={true}
+                duration={500}
+                onClick={closeMobileMenu}
+              >
+                <li key={button.id}>
+                  <button
+                    className={`rounded-md p-3 flex items-center text-gray-900 my-2 space-x-2 ${
+                      button.id === hoveredButton ||
+                      button.key === visibleSection
+                        ? "bg-indigo-400 text-white"
+                        : "bg-transparent "
+                    }`}
+                    onMouseEnter={() => handleMouseEnter(button.id)}
+                    onMouseLeave={handleMouseLeave}
+                  >
+                    {button.icon}
+                    <span>{button.text}</span>
+                  </button>
+                </li>
+              </Link>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/**DESKTOP */}
+      <div className="hidden md:block fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
+        {buttonData.map((button) => (
+          <Link
+            key={button.id}
+            to={button.key.toLowerCase()}
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <button
+              className={`rounded-full p-3 flex items-center text-gray-900 drop-shadow-sm my-2 ${
+                button.id === hoveredButton || button.key === visibleSection
+                  ? "bg-indigo-400 text-white"
+                  : "bg-white"
+              }`}
+              onMouseEnter={() => handleMouseEnter(button.id)}
+              onMouseLeave={handleMouseLeave}
+            >
+              {button.icon}
+              {hoveredButton === button.id && (
+                <span className="ml-2">{button.text}</span>
+              )}
+            </button>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 }
