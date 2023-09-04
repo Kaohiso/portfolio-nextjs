@@ -12,6 +12,8 @@ import {
   Footer,
 } from "./components";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
+import MultiLayerParallax from "./components/MultiLayerParallax";
+import About from "./components/About";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,7 +59,7 @@ export default function Home() {
     <div>
       <Header />
       <section id="home">
-        <WhoIAm />
+        <MultiLayerParallax />
       </section>
       <section id="service">
         <Services />

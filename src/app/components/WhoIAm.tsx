@@ -1,8 +1,8 @@
-import React from "react";
 
 export default function WhoIAm() {
   return (
-    <section className="h-screen flex justify-center">
+    <div className="h-[200vh]">
+      <section className="h-screen flex justify-center">
         <div className="flex justify-center  flex-col">
           <div className="text-gray-800 text-lg lg:text-3xl ">
             Antoine BENTINI
@@ -11,6 +11,7 @@ export default function WhoIAm() {
             UX & UI Designer
           </div>
         </div>
-    </section>
+      </section>
+    </div>
   );
 }
