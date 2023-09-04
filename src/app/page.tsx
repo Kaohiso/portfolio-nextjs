@@ -61,6 +61,9 @@ export default function Home() {
       <section id="home">
         <MultiLayerParallax />
       </section>
+      <section id="about">
+          <About />
+      </section>
       <section id="service">
         <Services />
       </section>

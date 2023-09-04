@@ -6,9 +6,9 @@ import {
   HiOutlineBriefcase,
   HiOutlineClock,
   HiOutlineX,
+  HiOutlineUser
 } from "react-icons/hi";
-import { HiOutlineBars3 } from "react-icons/hi2";
-import { HiOutlineEnvelope } from "react-icons/hi2";
+import { HiOutlineBars3, HiOutlineEnvelope } from "react-icons/hi2";
 import { Link } from "react-scroll";
 
 const buttonData = [
@@ -17,6 +17,12 @@ const buttonData = [
     icon: <HiOutlineHome className="text-2xl" />,
     text: "Accueil",
     key: "home",
+  },
+  {
+    id: 7,
+    icon: <HiOutlineUser className="text-2xl" />,
+    text: "A propos",
+    key: "about"
   },
   {
     id: 2,

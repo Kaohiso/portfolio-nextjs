@@ -7,7 +7,7 @@ import { PiLayoutDuotone } from "react-icons/pi";
 
 export default function Services() {
   return (
-    <section className="h-auto flex flex-col justify-center py-20 mx-4">
+    <section className="h-auto flex flex-col justify-center pb-20 mx-4">
       <div className="max-w-4xl mx-auto p-4">
         <h1 className="text-6xl text-gray-800 font-semibold mb-9">Services</h1>
         <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6">
