@@ -1,8 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Nunito, Roboto, Monoton, Figtree } from "next/font/google";
-
-const nunito = Nunito({ subsets: ["latin"] });
+import { Figtree } from "next/font/google";
 
 const josefin_Sans = Figtree({
   style: ["normal"],

@@ -5,25 +5,25 @@ export default function Portfolio() {
   const images = [
     {
       id: 1,
-      src: "/auditool.jpg",
+      src: "/img/auditool.jpg",
       title: "AudiTool",
       tag: "Web",
     },
     {
       id: 2,
-      src: "/medi_merge_hub.jpg",
+      src: "/img/medi_merge_hub.jpg",
       title: "MediMergeHub",
       tag: "Web",
     },
     {
       id: 3,
-      src: "/lih_mobile_app.jpg",
+      src: "/img/lih_mobile_app.jpg",
       title: "LIHMobileApp",
       tag: "Mobile",
     },
     {
       id: 4,
-      src: "/colive.jpg",
+      src: "/img/colive.jpg",
       title: "Colive",
       tag: "Mobile",
     },

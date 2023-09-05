@@ -13,7 +13,7 @@ const Footer = () => {
           <a href="/" className="flex">
             <Image
               className="h-8 mr-2"
-              src={"/Logo.png"}
+              src={"/img/Logo.png"}
               width="25"
               height="20"
               alt=""

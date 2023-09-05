@@ -5,7 +5,7 @@ import "./About.css";
 export default function About() {
   return (
     <section className="h-auto py-20 mx-4">
-      <div className="max-w-4xl mx-auto flex ">
+      <div className="max-w-4xl mx-auto flex flex-col">
         <div className="space-y-4">
           <div className="space-y-4">
             <h2 className="text-5xl font-semibold">
@@ -31,7 +31,7 @@ export default function About() {
         </div>
         <Image
           className=""
-          src={"/abstract.png"}
+          src={"/img/abstract.png"}
           width={"400"}
           height={"400"}
           alt=""

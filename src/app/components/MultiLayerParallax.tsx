@@ -16,7 +16,7 @@ export default function MultiLayerParallax() {
   return (
     <div
       ref={ref}
-      className="w-screen h-[170vh] overflow-hidden relative grid place-items-center"
+      className="w-screen h-[100vh] lg:h-[170vh] overflow-hidden relative grid place-items-center"
     >
       {/**TEXT */}
       <motion.div
@@ -25,8 +25,8 @@ export default function MultiLayerParallax() {
           y: textY,
         }}
       >
-        <h1 className="text-8xl">Élevez l'expérience</h1>
-        <h1 className="text-8xl">dessinez l'avenir</h1>
+        <h1 className="text-5xl lg:text-8xl">Élevez l'expérience</h1>
+        <h1 className="text-5xl lg:text-8xl">dessinez l'avenir</h1>
       </motion.div>
       {/**BG */}
       <motion.div
@@ -39,7 +39,7 @@ export default function MultiLayerParallax() {
       <motion.div
         className="absolute inset-0 z-30"
         style={{
-          backgroundImage: `url(/cloud.png)`,
+          backgroundImage: `url(/img/cloud.png)`,
           backgroundPosition: "bottom",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
@@ -50,12 +50,13 @@ export default function MultiLayerParallax() {
       <div
         className="absolute inset-0 z-20"
         style={{
-          backgroundImage: `url(/mountain.png)`,
+          backgroundImage: `url(/img/mountainFade.png)`,
           backgroundPosition: "bottom",
           backgroundSize: "contain",
           backgroundRepeat: "no-repeat",
         }}
-      ></div>
+      >
+      </div>
     </div>
   );
 }
