@@ -1,15 +1,15 @@
 import Header from "./header";
-import WhoIAm from "./WhoIAm";
 import Services from "./Services";
 import Experience from "./Experience";
 import Contact from "./Contact";
 import Portfolio from "./Portfolio";
 import Skills from "./Skills";
 import Footer from "./footer";
+import HomeParallax from "./Home";
 
 export {
   Header,
-  WhoIAm,
+  HomeParallax,
   Services,
   Experience,
   Contact,

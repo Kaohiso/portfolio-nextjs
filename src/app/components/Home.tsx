@@ -1,7 +1,7 @@
-import { useScroll, motion, useTransform, useMotionValue } from "framer-motion";
-import React, { useRef, useEffect, useState } from "react";
+import { useScroll, motion, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 
-export default function MultiLayerParallax() {
+export default function HomeParallax() {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({

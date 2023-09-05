@@ -77,7 +77,7 @@ export default function HeaderMobile(data: any) {
             duration={500}
           >
             <motion.li
-              className="self-end pb-4"
+              className="pb-4"
               variants={variants}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -96,65 +96,3 @@ export default function HeaderMobile(data: any) {
     </motion.nav>
   );
 }
-
-/**
- * MON HEADER MOBILE FONCTIONNEL
-
-      Mobile Menu Button 
-      <div className="z-40 md:hidden fixed right-0 m-4">
-        <button
-          type="button"
-          className="bg-white rounded-full p-3 drop-shadow-md"
-          onClick={toggleMobileMenu}
-        >
-          <span className="sr-only">Open main menu</span>
-          <HiOutlineBars3 className="h-6 w-6" aria-hidden="true" />
-        </button>
-      </div>
-
-      Mobile Menu 
-      <div
-        className={`z-50 fixed right-0 drop-shadow-md md:hidden ${
-          mobileMenuOpen ? "block" : "hidden"
-        }`}
-      >
-        <div className="bg-white w-64 absolute right-0 top-0 h-screen flex flex-col p-4">
-          Close Button
-          <button
-            type="button"
-            className="self-end p-2 text-gray-700"
-            onClick={closeMobileMenu}
-          >
-            <span className="sr-only">Close menu</span>
-            <HiOutlineX className="h-6 w-6" aria-hidden="true" />
-          </button>
-
-          Menu Items
-          <ul className="text-white">
-            {data.buttonData.map((button: any) => (
-              <Link
-                key={button.id}
-                to={button.key.toLowerCase()}
-                spy={true}
-                smooth={true}
-                duration={500}
-                onClick={closeMobileMenu}
-                className=""
-              >
-                <motion.li
-                  className="pb-4"
-                  variants={variants}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <button className="flex text-gray-900 space-x-1 bg-indigo-500 p-3 rounded-md text-white">
-                    {button.icon}
-                    <span>{button.text}</span>
-                  </button>
-                </motion.li>
-              </Link>
-            ))}
-          </ul>
-        </div>
-      </div>}
- */
