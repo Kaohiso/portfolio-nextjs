@@ -108,7 +108,7 @@ export default function Header() {
       <HeaderMobile buttonData={buttonData} />
 
       {/**DESKTOP */}
-      <div className="hidden md:block fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
+      <div className="hidden lg:block fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
         {buttonData.map((button) => (
           <Link
             key={button.id}
