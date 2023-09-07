@@ -1,15 +1,17 @@
-import Header from "./header";
-import Services from "./Services";
-import Experience from "./Experience";
-import Contact from "./Contact";
-import Portfolio from "./Portfolio";
-import Skills from "./Skills";
-import Footer from "./footer";
-import HomeParallax from "./Home";
+import Header from "./sections/header";
+import Services from "./sections/Services";
+import Experience from "./sections/experience";
+import Contact from "./sections/contact";
+import Portfolio from "./sections/portfolio";
+import Skills from "./sections/skills";
+import Footer from "./sections/footer";
+import Welcome from "./sections/welcome";
+import About from "./sections/about";
 
 export {
   Header,
-  HomeParallax,
+  Welcome,
+  About,
   Services,
   Experience,
   Contact,

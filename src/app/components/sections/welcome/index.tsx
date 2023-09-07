@@ -1,7 +1,7 @@
 import { useScroll, motion, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-export default function HomeParallax() {
+export default function Welcome() {
   const ref = useRef(null);
 
   const { scrollYProgress } = useScroll({

@@ -1,11 +1,10 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { Link } from "react-scroll";
 import { motion, useCycle } from "framer-motion";
 
 export default function HeaderMobile(data: any) {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  const containerRef = useRef(null);
 
   const container = {
     hidden: {
@@ -13,15 +12,15 @@ export default function HeaderMobile(data: any) {
       transition: {
         type: "spring",
         staggerChildren: 0.05,
-        staggerDirection: -1
-      }
+        staggerDirection: -1,
+      },
     },
     show: {
       opacity: 1,
       transition: {
         type: "spring",
         staggerChildren: 0.05,
-        staggerDirection: 1
+        staggerDirection: 1,
       },
     },
   };
@@ -32,12 +31,7 @@ export default function HeaderMobile(data: any) {
   };
 
   return (
-    <nav
-      //initial={"hidden"}
-      //animate={isOpen ? "open" : "closed"}
-      className="lg:hidden"
-      //ref={containerRef}
-    >
+    <nav className="lg:hidden">
       {/* BOUTON */}
       <motion.button
         type="button"
@@ -53,18 +47,17 @@ export default function HeaderMobile(data: any) {
         variants={container}
         initial="hidden"
         animate={isOpen ? "show" : "hidden"}
-        className={`z-50 fixed top-20 right-4 top-10 right-0 `}
-        //ref={containerRef}
+        className="z-50 fixed top-20 right-4 top-10 right-0"
       >
         {data.buttonData.map((button: any) => (
           <motion.li
+            key={button.id}
             className="pb-4"
             variants={item}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <Link
-              key={button.id}
               to={button.key.toLowerCase()}
               spy={true}
               smooth={true}

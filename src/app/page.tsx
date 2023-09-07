@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import {
   Header,
-  HomeParallax,
+  Welcome,
+  About,
   Services,
   Experience,
   Contact,
@@ -12,7 +13,6 @@ import {
   Footer,
 } from "./components";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
-import About from "./components/About";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,13 +58,10 @@ export default function Home() {
     <div>
       <Header />
       <section id="home">
-        <HomeParallax />
+        <Welcome />
       </section>
       <section id="about">
         <About />
-      </section>
-      <section id="service">
-        <Services />
       </section>
       <section id="skill">
         <Skills />

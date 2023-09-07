@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Masonry from "@mui/lab/Masonry";
+import { motion } from "framer-motion";
 
 export default function Portfolio() {
   const images = [
@@ -11,19 +12,19 @@ export default function Portfolio() {
     },
     {
       id: 2,
-      src: "/img/medi_merge_hub.jpg",
+      src: "/img/MediMergeHub.png",
       title: "MediMergeHub",
       tag: "Web",
     },
     {
       id: 3,
-      src: "/img/lih_mobile_app.jpg",
+      src: "/img/lih_mobile_app.png",
       title: "LIHMobileApp",
       tag: "Mobile",
     },
     {
       id: 4,
-      src: "/img/colive.jpg",
+      src: "/img/colive.png",
       title: "Colive",
       tag: "Mobile",
     },
@@ -48,31 +49,31 @@ export default function Portfolio() {
         <h1 className="text-6xl font-semibold mb-9">Portfolio</h1>
         <div className="flex space-x-4 mb-4">
           {tags.map((tag) => (
-            <button
+            <motion.button
               key={tag}
               className={`px-4 py-2 rounded-full text-xs ${
                 selectedTag === tag
                   ? "bg-indigo-500 text-white"
                   : "bg-transparent text-indigo-500 border-2 border-indigo-500"
               }`}
+              whileTap={{ scale: 0.9 }}
               onClick={() => handleTagClick(tag)}
             >
               {tag}
-            </button>
+            </motion.button>
           ))}
         </div>
         <Masonry columns={3} spacing={2}>
           {filteredImages.map((image) => (
-            <div
+            <motion.div
               key={image.id}
-              className="transition-transform transform hover:scale-105"
+              whileHover={{ scale: 1.1 }}
             >
               <img
                 src={image.src}
                 alt={image.title}
-                className="rounded-lg shadow-md"
               />
-            </div>
+            </motion.div>
           ))}
         </Masonry>
       </div>
