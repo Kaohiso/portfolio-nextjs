@@ -3,7 +3,7 @@ import Services from "./sections/Services";
 import Experience from "./sections/experience";
 import Contact from "./sections/contact";
 import Portfolio from "./sections/portfolio";
-import Skills from "./sections/skills";
+import Formation from "./sections/skills";
 import Footer from "./sections/footer";
 import Welcome from "./sections/welcome";
 import About from "./sections/about";
@@ -16,6 +16,6 @@ export {
   Experience,
   Contact,
   Portfolio,
-  Skills,
+  Formation,
   Footer,
 };

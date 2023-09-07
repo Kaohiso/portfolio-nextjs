@@ -1,9 +1,15 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import { Figtree, Merriweather, Poppins } from "next/font/google";
 
 const josefin_Sans = Figtree({
   style: ["normal"],
+  subsets: ["latin"],
+});
+
+const merriweather = Poppins({
+  style: "normal",
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
 });
 
@@ -19,7 +25,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={josefin_Sans.className}>{children}</body>
+      <body className={merriweather.className}>{children}</body>
     </html>
   );
 }

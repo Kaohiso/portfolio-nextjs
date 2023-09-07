@@ -4,8 +4,8 @@ import "./About.css";
 
 export default function About() {
   return (
-    <section className="h-auto py-20 mx-4">
-      <div className="max-w-4xl mx-4 md:mx-16 lg:mx-auto flex flex-col">
+    <section className="h-screen py-20 mx-4">
+      <div className="flex flex-col">
         <div className="space-y-4">
           <div className="space-y-4">
             <h2 className="text-5xl font-semibold">
@@ -29,13 +29,6 @@ export default function About() {
             </p>
           </div>
         </div>
-        <Image
-          className=""
-          src={"/img/abstract.png"}
-          width={"400"}
-          height={"400"}
-          alt=""
-        />
       </div>
     </section>
   );

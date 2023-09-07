@@ -9,7 +9,7 @@ import {
   Experience,
   Contact,
   Portfolio,
-  Skills,
+  Formation,
   Footer,
 } from "./components";
 import { ArrowSmallUpIcon } from "@heroicons/react/24/outline";
@@ -52,7 +52,7 @@ const ScrollToTopButton = () => {
     </>
   );
 };
-
+//className="mx-8 md:mx-16 lg:mx-32 "
 export default function Home() {
   return (
     <div>
@@ -60,21 +60,26 @@ export default function Home() {
       <section id="home">
         <Welcome />
       </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="skill">
-        <Skills />
-      </section>
-      <section id="exp">
-        <Experience />
-      </section>
-      <section id="work">
-        <Portfolio />
-      </section>
-      <section id="contact">
-        <Contact />
-      </section>
+
+      {/**CONTENT**/}
+      <div className="mx-4 sm:mx-8 md:mx-16 lg:mx-48" >
+        <section id="about">
+          <About />
+        </section>
+        <section id="skill">
+          <Formation />
+        </section>
+        <section id="exp">
+          <Experience />
+        </section>
+        <section id="work">
+          <Portfolio />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </div>
+      
       <Footer />
       <ScrollToTopButton />
       {/*<Cursor />*/}

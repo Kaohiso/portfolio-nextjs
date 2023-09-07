@@ -20,13 +20,13 @@ export default function Welcome() {
     >
       {/**TEXT */}
       <motion.div
-        className="h-full font-bold relative z-10 top-40 text-white text-center"
+        className="h-full font-medium relative z-10 top-40 text-white text-center text-6xl lg:text-8xl"
         style={{
           y: textY,
         }}
       >
-        <h1 className="text-5xl lg:text-8xl">Élevez l'expérience</h1>
-        <h1 className="text-5xl lg:text-8xl">dessinez l'avenir</h1>
+        <h1>Élevez l'expérience</h1>
+        <h1>dessinez l'avenir</h1>
       </motion.div>
       {/**BG */}
       <motion.div
