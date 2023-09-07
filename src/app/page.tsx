@@ -5,7 +5,6 @@ import {
   Header,
   Welcome,
   About,
-  Services,
   Experience,
   Contact,
   Portfolio,
