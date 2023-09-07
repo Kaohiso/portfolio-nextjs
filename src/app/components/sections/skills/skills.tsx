@@ -33,6 +33,7 @@ export default function Skills() {
     "Python",
     "Java",
     "C/C++",
+    ".NET",
     "Git",
   ];
 
@@ -64,9 +65,9 @@ export default function Skills() {
     <div>
       <h1 className="text-6xl font-semibold mb-9">Compétences</h1>
       <div className="space-y-4">
-        <SectionFab title={"Général"} data={generalData} />
         <SectionFab title={"Design"} data={designData} />
         <SectionFab title={"Ingénierie"} data={engineeringData} />
+        <SectionFab title={"Général"} data={generalData} />
       </div>
     </div>
   );

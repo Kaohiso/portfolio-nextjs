@@ -20,7 +20,7 @@ export default function Welcome() {
     >
       {/**TEXT */}
       <motion.div
-        className="h-full font-medium relative z-10 top-40 text-white text-center text-6xl lg:text-8xl"
+        className="h-full font-medium relative z-10 top-40 md:top-10 lg:top-40 text-white text-center text-4xl md:text-6xl lg:text-8xl"
         style={{
           y: textY,
         }}

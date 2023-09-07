@@ -51,7 +51,7 @@ const ScrollToTopButton = () => {
     </>
   );
 };
-//className="mx-8 md:mx-16 lg:mx-32 "
+
 export default function Home() {
   return (
     <div>

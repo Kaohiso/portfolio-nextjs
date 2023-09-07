@@ -64,7 +64,7 @@ export default function HeaderMobile(data: any) {
               duration={500}
             >
               <button
-                className="space-x-1 bg-indigo-500 p-3 rounded-full text-white drop-shadow-md"
+                className="space-x-1 bg-gray-800 p-3 rounded-full text-white drop-shadow-md"
                 onClick={() => toggleOpen()}
               >
                 {button.icon}

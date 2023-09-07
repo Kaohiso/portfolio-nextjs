@@ -30,40 +30,11 @@ export default function Portfolio() {
     },
   ];
 
-  const tags = ["All", "Mobile", "Web" /*"image"*/]; // Liste des tags possibles
-
-  const [selectedTag, setSelectedTag] = useState("All"); // Tag actuellement sélectionné
-
-  const handleTagClick = (tag: string) => {
-    setSelectedTag(tag); // Mettre à jour le tag sélectionné
-  };
-
-  const filteredImages =
-    selectedTag === "All"
-      ? images
-      : images.filter((image) => image.tag === selectedTag);
-
   return (
     <section className="pt-20 text-gray-800">
       <h1 className="text-6xl font-semibold mb-9">Portfolio</h1>
-      <div className="flex space-x-4 mb-4">
-        {tags.map((tag) => (
-          <motion.button
-            key={tag}
-            className={`px-4 py-2 rounded-full text-xs ${
-              selectedTag === tag
-                ? "bg-indigo-500 text-white"
-                : "bg-transparent text-indigo-500 border-2 border-indigo-500"
-            }`}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => handleTagClick(tag)}
-          >
-            {tag}
-          </motion.button>
-        ))}
-      </div>
       <Masonry columns={3} spacing={2}>
-        {filteredImages.map((image) => (
+        {images.map((image) => (
           <motion.div key={image.id} whileHover={{ scale: 1.1 }}>
             <img src={image.src} alt={image.title} />
           </motion.div>

@@ -54,7 +54,6 @@ export default function Header() {
   return (
     <div>
       <HeaderMobile buttonData={buttonData} />
-
       <HeaderDesktop buttonData={buttonData} />
     </div>
   );

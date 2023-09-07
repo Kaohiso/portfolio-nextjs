@@ -17,7 +17,7 @@ export default function HeaderDesktop(data: any) {
           duration={500}
         >
           <motion.button
-            className="flex flex-row rounded-full p-3 bg-indigo-500 text-white drop-shadow-sm my-3"
+            className="flex flex-row rounded-full p-3 bg-gray-800 text-white drop-shadow-sm my-3"
             //whileTap={{ scale: 0.95 }}
             onHoverStart={() => setIsHovering(button.id)}
             onHoverEnd={() => setIsHovering(-1)}

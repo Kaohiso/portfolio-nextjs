@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Experience() {
   return (
-    <section className="flex flex-col justify-center pt-20 mx-4">
+    <section className="flex flex-col justify-center pt-20">
       <h1 className="text-6xl text-gray-800 font-semibold mb-9">Expériences</h1>
       <div className="relative pl-8 sm:pl-32 py-6 group">
         <div className="font-caveat font-medium text-2xl text-indigo-500 mb-1 sm:mb-0">
