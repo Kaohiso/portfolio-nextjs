@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Skills from "./skills";
+import Skills from "./Skill";
 import Study from "./Study";
 
 export default function Formation() {

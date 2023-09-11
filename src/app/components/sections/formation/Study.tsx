@@ -32,8 +32,8 @@ export default function Study() {
   function StudySection({ data }: EducationItems) {
     return (
       <div className="space-y-3 pr-5">
-        {data.map((educationItem: EducationItem) => (
-          <div>
+        {data.map((educationItem: EducationItem, index: number) => (
+          <div key={index}>
             <div className="text-xl font-semibold mb-1">{educationItem.degree}</div>
             <div className="text-sm">{educationItem.school} • {educationItem.date}</div>
           </div>

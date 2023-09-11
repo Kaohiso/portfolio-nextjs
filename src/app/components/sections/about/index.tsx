@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
+import WavyText from "./WavyText";
 import "./About.css";
 
 export default function About() {
+  const [replay, setReplay] = useState(true);
+  const verbs = ["design", "dessine", "développe", "recherche"];
+  const [currentVerbIndex, setCurrentVerbIndex] = useState(0);
+
   return (
     <section className="py-20 grid grid-cols-2">
       <div className="flex flex-col">
@@ -11,29 +17,10 @@ export default function About() {
             <h2 className="text-5xl font-semibold">
               Hello, je suis <span className="bg-amber-100">Antoine</span>
             </h2>
-            <h2 className="text-3xl">
-              Je{" "}
-              <span
-                className="hover:bg-blue-200"
-                style={{ fontFamily: "Rampart One" }}
-              >
-                design
-              </span>
-              ,{" "}
-              <span
-                className="hover:bg-fuchsia-200"
-                style={{ fontFamily: "Rampart One" }}
-              >
-                dessine
-              </span>{" "}
-              &{" "}
-              <span
-                className="hover:bg-emerald-200"
-                style={{ fontFamily: "Rampart One" }}
-              >
-                développe
-              </span>
-            </h2>
+            <div className="flex space-x-1 text-2xl">
+              <span>Je</span>
+              <WavyText verbs={verbs} />
+            </div>
           </div>
           <div className="text-md space-y-3 max-w-lg">
             UX & UI designer avec deux ans d'expérience au Luxembourg. Je mets
@@ -51,7 +38,7 @@ export default function About() {
           src={"/img/pngwing.png"}
           width={9000}
           height={9000}
-          alt="moi"
+          alt="avatar"
         />
       </div>
     </section>

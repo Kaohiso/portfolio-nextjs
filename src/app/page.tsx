@@ -81,7 +81,6 @@ export default function Home() {
       
       <Footer />
       <ScrollToTopButton />
-      {/*<Cursor />*/}
     </div>
   );
 }

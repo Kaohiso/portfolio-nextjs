@@ -1,13 +1,22 @@
-import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Link } from "react-scroll";
-import { motion, useMotionValue, transform, useTransform } from "framer-motion";
-import { HiOutlineHome } from "react-icons/hi";
+import { useState } from "react";
 
-export default function HeaderDesktop(data: any) {
-  const [isHovering, setIsHovering] = useState(-1);
+const MyButton = (data: any) => {
+  const [hoveredButton, setHoveredButton] = useState(null);
+
+  const textBGVariants = {
+    hidden: { opacity: 1, x: 0, width: ["100%", "0%"] },
+    hover: { opacity: 1, x: 0, width: ["0%", "100%"] },
+  };
+
+  const textVariants = {
+    hidden: { opacity: 0, x: 0, width: ["100%", "0%"] },
+    hover: { opacity: 1, x: 0, width: ["0%", "100%"] },
+  };
 
   return (
-    <div className="hidden lg:block fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
+    <div className="fixed hidden lg:block top-1/2 left-0 transform -translate-y-1/2 z-50 ml-6">
       {data.buttonData.map((button: any) => (
         <Link
           key={button.id}
@@ -17,49 +26,38 @@ export default function HeaderDesktop(data: any) {
           duration={500}
         >
           <motion.button
-            className="flex flex-row rounded-full p-3 bg-gray-800 text-white drop-shadow-sm my-3"
-            //whileTap={{ scale: 0.95 }}
-            onHoverStart={() => setIsHovering(button.id)}
-            onHoverEnd={() => setIsHovering(-1)}
-            //onMouseEnter={() => setIsHovering(button.id)}
-            //onMouseLeave={() => setIsHovering(-1)}
+            className="flex space-y-2 text-white "
+            onHoverStart={() => setHoveredButton(button.id)}
+            onHoverEnd={() => setHoveredButton(null)}
+            whileTap={{ scale: 0.9 }}
           >
-            {button.icon}
-            {isHovering === button.id && (
-              <span className="ml-2">{button.text}</span>
-            )}
+            <span className="my-2 p-3 bg-gray-800 rounded-full text-2xl z-10">
+              {button.icon}
+            </span>
+            <motion.span
+              className={`-ml-10 p-3 rounded-full bg-gray-800 whitespace-nowrap ${
+                hoveredButton === button.id ? "" : "hidden"
+              }`}
+              variants={textBGVariants}
+              initial={"hidden"}
+              animate={hoveredButton === button.id ? "hover" : "hidden"}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="ml-1 p-3" />
+              <motion.span
+                variants={textVariants}
+                initial={"hidden"}
+                animate={hoveredButton === button.id ? "hover" : "hidden"}
+                transition={{ duration: 1 }}
+              >
+                {button.text}
+              </motion.span>
+            </motion.span>
           </motion.button>
         </Link>
       ))}
     </div>
   );
-}
+};
 
-/* 
-<div className="hidden lg:block fixed top-1/2 left-0 transform -translate-y-1/2 pl-6 z-50">
-{buttonData.map((button) => (
-  <Link
-    key={button.id}
-    to={button.key.toLowerCase()}
-    spy={true}
-    smooth={true}
-    duration={500}
-  >
-    <button
-      className={`rounded-full p-3 flex items-center text-gray-900 drop-shadow-sm my-2 ${
-        button.id === hoveredButton || button.key === visibleSection
-          ? "bg-indigo-400 text-white"
-          : "bg-white"
-      }`}
-      onMouseEnter={() => handleMouseEnter(button.id)}
-      onMouseLeave={handleMouseLeave}
-    >
-      {button.icon}
-      {hoveredButton === button.id && (
-        <span className="ml-2">{button.text}</span>
-      )}
-    </button>
-  </Link>
-))}
-</div>
-*/
+export default MyButton;

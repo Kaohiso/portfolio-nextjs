@@ -2,7 +2,7 @@ import Header from "./sections/header";
 import Experience from "./sections/experience";
 import Contact from "./sections/contact";
 import Portfolio from "./sections/portfolio";
-import Formation from "./sections/skills";
+import Formation from "./sections/formation";
 import Footer from "./sections/footer";
 import Welcome from "./sections/welcome";
 import About from "./sections/about";
