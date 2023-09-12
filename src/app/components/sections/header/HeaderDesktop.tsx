@@ -11,8 +11,8 @@ const MyButton = (data: any) => {
   };
 
   const textVariants = {
-    hidden: { opacity: 0, x: 0, width: ["100%", "0%"] },
-    hover: { opacity: 1, x: 0, width: ["0%", "100%"] },
+    hidden: { opacity: 0},
+    hover: { opacity: 1},
   };
 
   return (
@@ -35,15 +35,13 @@ const MyButton = (data: any) => {
               {button.icon}
             </span>
             <motion.span
-              className={`-ml-10 p-3 rounded-full bg-gray-800 whitespace-nowrap ${
-                hoveredButton === button.id ? "" : "hidden"
-              }`}
+              className={`-ml-6 p-3 bg-gray-800 rounded-tr-full rounded-br-full whitespace-nowrap `}
               variants={textBGVariants}
               initial={"hidden"}
               animate={hoveredButton === button.id ? "hover" : "hidden"}
               transition={{ duration: 0.5 }}
             >
-              <span className="ml-1 p-3" />
+              <span className="p-3" />
               <motion.span
                 variants={textVariants}
                 initial={"hidden"}
