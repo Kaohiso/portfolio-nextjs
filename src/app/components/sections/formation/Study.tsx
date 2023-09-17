@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedSection from "../AnimatedSection";
 
 export default function Study() {
   interface EducationItem {
@@ -34,8 +35,16 @@ export default function Study() {
       <div className="space-y-3 pr-5">
         {data.map((educationItem: EducationItem, index: number) => (
           <div key={index}>
-            <div className="text-xl font-semibold mb-1">{educationItem.degree}</div>
-            <div className="text-sm">{educationItem.school} • {educationItem.date}</div>
+            <AnimatedSection delay={index * 0.2}>
+              <div className="text-xl font-semibold mb-1">
+                {educationItem.degree}
+              </div>
+            </AnimatedSection>
+            <AnimatedSection delay={index * 0.4}>
+              <div className="text-sm">
+                {educationItem.school} • {educationItem.date}
+              </div>
+            </AnimatedSection>
           </div>
         ))}
       </div>
@@ -44,7 +53,9 @@ export default function Study() {
 
   return (
     <div>
-      <h1 className="text-6xl font-semibold mb-9">Etudes</h1>
+      <AnimatedSection scale={1}>
+        <h1 className="text-6xl font-semibold mb-9">Etudes</h1>
+      </AnimatedSection>
       <StudySection data={educationData} />
     </div>
   );

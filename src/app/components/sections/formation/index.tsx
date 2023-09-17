@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Skills from "./Skill";
 import Study from "./Study";
+import AnimatedSection from "../AnimatedSection";
 
 export default function Formation() {
   return (

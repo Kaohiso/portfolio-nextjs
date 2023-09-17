@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Masonry from "@mui/lab/Masonry";
 import { motion } from "framer-motion";
+import AnimatedSection from "../AnimatedSection";
 
 export default function Portfolio() {
   const images = [
@@ -32,12 +33,16 @@ export default function Portfolio() {
 
   return (
     <section className="pt-20 text-gray-800">
-      <h1 className="text-6xl font-semibold mb-9">Portfolio</h1>
+      <AnimatedSection scale={1}>
+        <h1 className="text-6xl font-semibold mb-9">Portfolio</h1>
+      </AnimatedSection>
       <Masonry columns={3} spacing={2}>
-        {images.map((image) => (
-          <motion.div key={image.id} whileHover={{ scale: 1.1 }}>
-            <img src={image.src} alt={image.title} />
-          </motion.div>
+        {images.map((image, index) => (
+          <AnimatedSection delay={index * 0.2}>
+            <motion.div key={image.id} whileHover={{ scale: 1.1 }}>
+              <img src={image.src} alt={image.title} />
+            </motion.div>
+          </AnimatedSection>
         ))}
       </Masonry>
     </section>
